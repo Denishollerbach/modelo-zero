@@ -13,6 +13,7 @@ include_once("includes/header.php");
                     <div class="col-md-12">
                          <h2>Boas-vindas</h2>
                          <p>Ao modelo zero</p>
+                         <p>Texto de apoio</p>
                     </div>
                </div>
           </div>
