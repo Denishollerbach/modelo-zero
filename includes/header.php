@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-     <title>TITULO DA PAGINA</title>
+     <title><?= $title?></title>
      <meta name="description" content="DESCRIÇÃO DA PAGINA/SITE">
      <meta name="author" content="NOME DO AUTOR - EMPRESA">
      <meta charset="UTF-8">

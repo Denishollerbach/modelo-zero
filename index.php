@@ -1,7 +1,7 @@
 <?php
 // include_once("includes/session_start.php");
 // $pagina = 'index';
-// $title = 'Homepage - client name';
+$title = 'Homepage - modelo zero';
 include_once("includes/header.php");
 ?>
 
