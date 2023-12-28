@@ -1,7 +1,7 @@
-<h1>Jogo do número secreto</h1>
+<h1>Modelos zero para inicio de projeto</h1>
 
-<h2>🔖 Sobre</h2>
-<p>Projeto utilizado nos cursos de lógica de programação da Alura.</p>
+<h2>🔖 Template padrão</h2>
+<p>Usado para inicio de projeto, já com uma estrutura básica definida</p>
 
 ## 🚀 Tecnologias
 <div>
