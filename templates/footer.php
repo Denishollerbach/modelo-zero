@@ -57,6 +57,18 @@
 <script src="https://kit.fontawesome.com/1395a6f245.js"></script>
 <!-- Bootstrap JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<?php
+// Sweet Alert
+?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<?php
+// API
+?>
+<script type="module" src="./assets/js/api/conectaApi.js"></script>
+<script type="module" src="./assets/js/user/user-delete.js"></script>
+<script type="module" src="./assets/js/user/user-insert.js"></script>
+<script type="module" src="./assets/js/user/user-select.js"></script>
+<script type="module" src="./assets/js/user/user-update.js"></script>
 <!-- main.js -->
 <script src="assets/js/main-min.js"></script>
 <script src="assets/js/custom-main-min.js"></script>

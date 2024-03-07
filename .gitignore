@@ -1,2 +1,60 @@
+# Ignorar a pasta temp/
 temp/
+
+# Ignorar o arquivo anotations.txt
 anotations.txt
+
+# Ignorar arquivos de configuração do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos de cache e logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.pid
+*.seed
+*.pid.lock
+*.log
+*.log.*
+*.tsbuildinfo
+
+# Ignorar arquivos de dependências
+node_modules/
+bower_components/
+
+# Ignorar arquivos de build
+build/
+dist/
+out/
+*.exe
+*.msi
+*.apk
+
+# Ignorar arquivos de ambiente
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignorar arquivos de cache do editor
+.idea/
+.vscode/
+*.swp
+
+# Ignorar arquivos de teste
+coverage/
+
+# Ignorar arquivos de configuração de dependências
+.npmrc
+yarn.lock
+package-lock.json
+
+# Ignorar arquivos de configuração específicos do editor
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.komodotools/
+.vscode/

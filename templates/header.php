@@ -34,7 +34,7 @@
 </head>
 
 <body id="top">
-     <h1 class="d-none">TITULO DA PAGINA</h1>
+     <h1 class="d-none"><?= $title?></h1>
 
      <header id="header" class="header">
           <div class="top-header">
