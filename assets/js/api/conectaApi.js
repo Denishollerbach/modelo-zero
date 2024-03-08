@@ -116,7 +116,7 @@ async function deleteUsuario(userId) {
 async function verificarEmailExistente(email) {
      try {
           // Fazendo uma requisição POST para a URL da API de verificação de e-mail
-          const resposta = await fetch(rootUrl + "verifica-email.php", {
+          const resposta = await fetch(rootUrl + "user-validate.php", {
                method: 'POST',
                headers: {
                     'Content-Type': 'application/json'
@@ -143,9 +143,8 @@ async function verificarEmailExistente(email) {
 
 
 // Para Busca de um novo usuario
-async function buscaUsuario(termoDeBusca) {
-     // const conexao = await fetch(`http://localhost:3000/tasks?q=${termoDeBusca}`)
-     const conexao = await fetch(`http://localhost/modelos-prog/PHP-consumindo-api/api/buscaTarefas.php?q=${termoDeBusca}`)
+async function buscaDeUsuario(termoDeBusca) {
+     const conexao = await fetch(`${rootUrl}user-search.php?q=${termoDeBusca}`)
      const conexaoConvertida = await conexao.json();
      return conexaoConvertida;
 }
@@ -156,7 +155,8 @@ async function buscaUsuario(termoDeBusca) {
 export const conectaApi = {
      listaDeUsuarios,
      cadastroDeUsuario,
-     verificarEmailExistente,
      editarUsuario,
-     deleteUsuario
+     deleteUsuario,
+     verificarEmailExistente,
+     buscaDeUsuario
 };

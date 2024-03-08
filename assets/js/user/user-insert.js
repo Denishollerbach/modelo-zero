@@ -18,35 +18,47 @@ document.querySelector("[data-formulario-usuario]").addEventListener("submit", a
 
      // Tenta cadastrar o usuário chamando a API
      try {
-          // Faz a chamada para a API para cadastrar o usuário
-          const resposta = await conectaApi.cadastroDeUsuario(nome, email, senha);
-
-          // Verifica se o cadastro foi bem-sucedido
-          if (resposta.status === 'success') {
-               // Se o cadastro foi bem-sucedido, atualiza a lista de usuários
-               await listarUsuarios();
-
-               // Limpa os valores dos campos do formulário
-               nomeInput.value = '';
-               emailInput.value = '';
-               senhaInput.value = '';
-
-               // Exibe uma mensagem de sucesso usando Sweet Alert
+          const emailExistente = await conectaApi.verificarEmailExistente(email);
+          if (emailExistente) {
+               // Exibe uma mensagem de erro usando SweetAlert2
                Swal.fire({
-                    icon: 'success',
-                    title: 'Sucesso!',
-                    text: resposta.message
+                    icon: 'info',
+                    title: 'Este e-mail já está cadastrado!',
+                    text: 'Por favor, use outro e-mail.',
                });
+               // Sai da função se o e-mail já existir
+               return;
           } else {
-               // Se houve um erro no cadastro, exibe a mensagem de erro
-               console.error("Erro ao cadastrar o usuário:", resposta.message);
+               // Faz a chamada para a API para cadastrar o usuário
+               const resposta = await conectaApi.cadastroDeUsuario(nome, email, senha);
 
-               // Exibe uma mensagem de erro usando Sweet Alert
-               Swal.fire({
-                    icon: 'error',
-                    title: 'Erro!',
-                    text: resposta.message
-               });
+               // Verifica se o cadastro foi bem-sucedido
+               if (resposta.status === 'success') {
+                    // Se o cadastro foi bem-sucedido, atualiza a lista de usuários
+                    await listarUsuarios();
+
+                    // Limpa os valores dos campos do formulário
+                    nomeInput.value = '';
+                    emailInput.value = '';
+                    senhaInput.value = '';
+
+                    // Exibe uma mensagem de sucesso usando Sweet Alert
+                    Swal.fire({
+                         icon: 'success',
+                         title: 'Sucesso!',
+                         text: resposta.message
+                    });
+               } else {
+                    // Se houve um erro no cadastro, exibe a mensagem de erro
+                    console.error("Erro ao cadastrar o usuário:", resposta.message);
+
+                    // Exibe uma mensagem de erro usando Sweet Alert
+                    Swal.fire({
+                         icon: 'error',
+                         title: 'Erro!',
+                         text: resposta.message
+                    });
+               }
           }
      } catch (error) {
           // Se ocorrer um erro ao chamar a API, imprime no console e exibe uma mensagem de erro

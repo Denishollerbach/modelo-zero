@@ -67,6 +67,7 @@
 <script type="module" src="./assets/js/api/conectaApi.js"></script>
 <script type="module" src="./assets/js/user/user-delete.js"></script>
 <script type="module" src="./assets/js/user/user-insert.js"></script>
+<script type="module" src="./assets/js/user/user-search.js"></script>
 <script type="module" src="./assets/js/user/user-select.js"></script>
 <script type="module" src="./assets/js/user/user-update.js"></script>
 <!-- main.js -->
