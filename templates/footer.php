@@ -47,7 +47,8 @@
           </div>
      </div>
 
-     <div class="back-to-top nav-link"><a href="#top" alt="Voltar ao topo"><i class="fa fa-chevron-up"></i></a></div>
+     <!-- <div class="back-to-top nav-link"><a href="#top" alt="Voltar ao topo"><i class="fa fa-chevron-up"></i></a></div> -->
+     <div class="back-to-top nav-link"><a href="#top" alt="Voltar ao topo"><img src="assets/svg/chevron-up.svg" alt="Voltar ao topo" loading="lazy"></a></div>
 </footer>
 <!-- Jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
