@@ -7,7 +7,7 @@ document.addEventListener('click', async (event) => {
      // Verifica se o clique foi em um botão de exclusão
      if (event.target.classList.contains('btn-delete-user')) {
           // Obtém o ID do usuario a partir do elemento pai do botão
-          const userId = event.target.closest('.user-item').dataset.userId;
+          const idUsuario = event.target.closest('.user-item').dataset.idUsuario;
           console.log("Botão de excluir clicado");
 
           // Exibe um modal de confirmação usando o SweetAlert
@@ -25,7 +25,7 @@ document.addEventListener('click', async (event) => {
                     // Se o usuário confirmar, exclua o usuario
                     try {
                          // Chama a função de exclusão
-                         const response = await conectaApi.deleteUsuario(userId);
+                         const response = await conectaApi.deleteUsuario(idUsuario);
                          // Exibe a mensagem de sucesso
                          Swal.fire({
                               title: 'Excluído!',

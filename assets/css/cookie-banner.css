@@ -1,0 +1,97 @@
+@charset "UTF-8";
+#cookieBanner {
+  position: fixed;
+  max-width: 360px;
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
+  bottom: -400px;
+  right: 40px;
+  padding: 30px;
+  border-radius: 15px;
+  font-size: 14px;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 2px 9px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 9px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 9px 2px rgba(0, 0, 0, 0.75);
+  transition: all 2s ease-in-out;
+  z-index: 9999;
+  overflow: hidden;
+}
+#cookieBanner.show {
+  bottom: 10px;
+}
+#cookieBanner.show .content::before {
+  right: -45px;
+  top: -45px;
+  transition-delay: 1.8s;
+}
+#cookieBanner .content {
+  position: relative;
+}
+#cookieBanner .content::before {
+  content: "🍪";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: -145px;
+  top: -145px;
+  font-size: 50px;
+  text-align: center;
+  z-index: -1;
+  line-height: 1;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+#cookieBanner .content p {
+  z-index: 1;
+}
+#cookieBanner .content .btn-cookie {
+  display: block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  color: #e1ab12;
+  border: 1px solid #e1ab12;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  z-index: 1;
+}
+#cookieBanner .content .btn-cookie::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100%;
+  height: 100% x;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background-color: #e1ab12;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+#cookieBanner .content .btn-cookie:hover {
+  scale: 1.1;
+  color: #fff;
+  box-shadow: 0 0px 20px rgba(193, 163, 98, 0.6);
+}
+#cookieBanner .content .btn-cookie:hover::before {
+  scale: 1.2;
+}
+#cookieBanner .content .btn-cookie:active {
+  scale: 1;
+}
+@media screen and (max-width: 768px) {
+  #cookieBanner {
+    max-width: 100%;
+    right: 0;
+    border-radius: 0;
+  }
+  #cookieBanner.show {
+    bottom: 0;
+  }
+}

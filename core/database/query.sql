@@ -1,5 +1,5 @@
 -- Cria o banco de dados hbach-template
-CREATE DATABASE IF NOT EXISTS hbach_template;
+CREATE DATABASE IF NOT EXISTS db_hbach_template;
 
 -- Seleciona o banco de dados hbach-template
 USE hbach_template;

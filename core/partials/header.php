@@ -2,40 +2,65 @@
 <html lang="pt-br">
 
 <head>
-     <title><?= $title?></title>
-     <meta name="description" content="DESCRIÇÃO DA PAGINA/SITE">
-     <meta name="author" content="NOME DO AUTOR - EMPRESA">
+     <!-- Google Tag Manager -->
+
      <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="author" content="Hypera Pharma">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" href="assets/img/fav-icon.png">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+     <title><?= $title ?></title>
+     <meta name="description" content="DESCRIÇÃO DA PAGINA/SITE">
+
+     <meta name="theme-color" content="#cecece">
+     <!-- <meta name="robots" content="noindex"> -->
+     <!-- <meta name="googlebot" content="noindex"> -->
+     <meta name="robots" content="index, follow">
+     <meta name="googlebot" content="index, follow">
+
+     <link rel="canonical" href="https://URL DA PAGINA DO SITE">
 
      <meta property="og:locale" content="pt_BR">
-     <meta property="og:site_name" content="">
      <meta property="og:url" content="https://URL DA PAGINA DO SITE">
-     <meta property="og:type" content="website">
      <meta property="og:title" content="TITULO DA PAGINA">
+     <meta property="og:site_name" content="NOME DO SiTE">
      <meta property="og:description" content="DESCRIÇÃO DA PAGINA/SITE" />
+     <meta property="og:image" content="../../assets/img/og/og-image.png" />
+     <meta property="og:image:type" content="image/jpg">
+     <meta property="og:type" content="website">
 
-     <meta property="og:image" content="assets/img/og/og-image.png" />
      <meta name="twitter:card" content="summary">
      <meta name="twitter:site" content="" />
      <meta name="twitter:creator" content="NOME DO AUTOR - EMPRESA" />
-     <link rel="apple-touch-icon" href="assets/img/fav-icon.png">
+
+     <link rel="icon" href="../../assets/img/fav-icon.png">
+     <link rel="apple-touch-icon" href="../../assets/img/fav-icon.png">
+     <meta name="msapplication-TileImage" content="/favicon.ico">
+     <link rel="shortcut icon" href="/favicon.ico">
+
      <meta name="apple-mobile-web-app-capable" content="yes">
      <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+
+     <!-- Preconnect -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
      <!-- Bootstrap CSS v5.2.1 -->
      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> -->
-     <link rel="stylesheet" href="assets/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" crossorigin="anonymous">
+
      <!-- AOS css -->
-     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+
      <!-- CSS only -->
-     <link rel="stylesheet" type="text/css" href="assets/css/custom-main.css">
+     <link rel="stylesheet" type="text/css" href="../../assets/css/cookie-banner.min.css">
+     <link rel="stylesheet" type="text/css" href="../../assets/css/main.min.css">
 </head>
 
-<body id="top">
-     <h1 class="d-none"><?= $title?></h1>
+<body id="top" cz-shortcut-listen="true">
+     <h1 class="d-none h1-hidden"><?= $title ?></h1>
 
      <header id="header" class="header">
           <div class="top-header">

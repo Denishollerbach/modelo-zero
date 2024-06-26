@@ -12,7 +12,7 @@ export function constroiUsuario(id, nome, email) {
           <p>ID: <span class="user-id">${id}</span></p>
           <p>Nome: <span class="user-name">${nome}</span></p>
           <p>Email: <span class="user-email">${email}</span></p>
-          <button class="btn btn-primary me-2 btn-user-update" data-btn-user-update>Editar usuário</button>
+          <button class="btn btn-primary me-2 btn-user-update" data-btn-user-update="${id}">Editar usuário</button>
           <button class="btn btn-danger btn-delete-user">Excluir</button>
      </div>
      `;
@@ -23,7 +23,7 @@ export function constroiUsuario(id, nome, email) {
 export async function listarUsuarios() {
      try {
           const listaApi = await conectaApi.listaDeUsuarios();
-          console.log(listaApi);
+          // console.log(listaApi);
           // Obtém o elemento HTML da lista de usuários
           const listaUsuarioElement = document.querySelector("[data-user-list]");
 

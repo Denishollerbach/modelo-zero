@@ -1,6 +1,6 @@
 <?php
 $title = 'Homepage - modelo zero';
-include_once("templates/header.php");
+include_once("core/partials/header.php");
 ?>
 
 <main>
@@ -63,4 +63,4 @@ include_once("templates/header.php");
 
 </main>
 
-<?php include_once("templates/footer.php"); ?>
+<?php include_once("core/partials/footer.php"); ?>

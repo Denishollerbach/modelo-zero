@@ -371,26 +371,31 @@ $(document).ready(function ($) {
 
 	// });
 
-	// Função para adicionar a classe activated nas seções desejadas	
+	// Função para adicionar a classe activated nas seções desejadas
 	var sections_to_activate = document.querySelectorAll('.section_to_active');
+	var qtd_ativacao = Array.from(sections_to_activate).fill(0); // Inicializa um array com zeros para acompanhar a ativação de cada seção
 
 	if (sections_to_activate.length) {
-		window.addEventListener('scroll', function () {
-			sections_to_activate.forEach(function (section_to_active) {
-				var qtd_ativacao = 0;
-				// Posição do topo da seção em relação ao topo da página
+		function activateSections() {
+			sections_to_activate.forEach(function (section_to_active, index) {
 				var toTop = section_to_active.offsetTop;
-				// Posição do final da seção em relação ao topo da página
 				var toBottom = toTop + section_to_active.offsetHeight;
-				// Posição do final da seção ajustada pela altura da janela
-				var toBottomSection = toBottom - window.innerHeight;
+				var animateOffset = parseInt(section_to_active.getAttribute('data-animate-offset')) || 10;
+				var margem = (toBottom - toTop) * (animateOffset / 100);
+				var toBottomSection = toBottom - window.innerHeight - margem;
 
-				if (qtd_ativacao === 0 && window.scrollY > toBottomSection) {
+				if (qtd_ativacao[index] === 0 && window.scrollY > toBottomSection) {
 					section_to_active.classList.add('activated');
-					qtd_ativacao = 1;
+					qtd_ativacao[index] = 1;
+				} else if (qtd_ativacao[index] === 1 && window.scrollY < toBottomSection) {
+					section_to_active.classList.remove('activated');
+					qtd_ativacao[index] = 0;
 				}
 			});
-		});
+		}
+
+		window.addEventListener('scroll', activateSections);
+		window.addEventListener('load', activateSections);
 	}
 
 });

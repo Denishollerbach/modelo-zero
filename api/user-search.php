@@ -1,59 +1,37 @@
 <?php
 // Inclua a conexão com o banco de dados
-// require_once '../includes/db_connection.php';
-require_once __DIR__ . '/../includes/db_connection.php';
-
-
-
-// Função para buscar tarefas com base em um termo de pesquisa
-function searchTasks($searchTerm)
-{
-     global $mysqli;
-
-     // Escapa o termo de pesquisa para evitar injeção de SQL
-     $searchTerm = $mysqli->real_escape_string($searchTerm);
-
-     // Query para buscar tarefas que contenham o termo de pesquisa no título ou na observação
-     $query = "SELECT * FROM usuarios WHERE nomeUsuario LIKE '%$searchTerm%' OR emailUsuario LIKE '%$searchTerm%'";
-     $result = $mysqli->query($query);
-
-     $tasks = [];
-     while ($row = $result->fetch_assoc()) {
-          $tasks[] = $row;
-     }
-     return $tasks;
-}
+require_once __DIR__ . '/../core/database/db_connection.php';
 
 // Verifica se o parâmetro 'q' foi passado na URL
 if (isset($_GET['q'])) {
      // Obtém o valor do parâmetro 'q'
      $searchTerm = $_GET['q'];
 
-     // Busca as tarefas com base no termo de pesquisa
-     $tasks = searchTasks($searchTerm);
+     // Busca os usuários com base no termo de pesquisa
+     $users = searchUsers($searchTerm, $conn); // Passa a conexão como parâmetro
 
-     // Retorna as tarefas encontradas como JSON
+     // Retorna os usuários encontrados como JSON
      header('Content-Type: application/json; charset=utf-8');
-     echo json_encode($tasks);
+     echo json_encode($users);
 } else {
-     // Se nenhum termo de pesquisa for fornecido, retorna todas as tarefas
-     function getTasks()
-     {
-          global $mysqli;
+     // Se nenhum termo de pesquisa for fornecido, retorna uma mensagem de erro
+     http_response_code(400);
+     echo json_encode(['status' => 'error', 'message' => 'Por favor, forneça um termo de pesquisa.']);
+}
 
-          $query = "SELECT * FROM tasks";
-          $result = $mysqli->query($query);
+// Função para buscar usuários com base em um termo de pesquisa
+function searchUsers($searchTerm, $conn)
+{
+     // Escapa o termo de pesquisa para evitar injeção de SQL
+     $searchTerm = $conn->real_escape_string($searchTerm);
 
-          $tasks = [];
-          while ($row = $result->fetch_assoc()) {
-               $tasks[] = $row;
-          }
-          return $tasks;
+     // Query para buscar usuários que contenham o termo de pesquisa no nome ou no email
+     $query = "SELECT * FROM usuarios WHERE nomeUsuario LIKE '%$searchTerm%' OR emailUsuario LIKE '%$searchTerm%'";
+     $result = $conn->query($query);
+
+     $users = [];
+     while ($row = $result->fetch_assoc()) {
+          $users[] = $row;
      }
-
-     $tasks = getTasks();
-
-     // Retorna todas as tarefas como JSON
-     header('Content-Type: application/json; charset=utf-8');
-     echo json_encode($tasks);
+     return $users;
 }

@@ -1,5 +1,7 @@
 // Obtém a raiz do projeto
-const rootUrl = window.location.origin + '/modelos-prog/modelo-zero/api/';
+const rootUrl = window.location.origin + '/api/';
+// console.log(rootUrl + "user-select.php");
+// const rootUrl = '/api/';
 
 // Função para obter a lista de usuários da API
 async function listaDeUsuarios() {
@@ -33,9 +35,9 @@ async function cadastroDeUsuario(name, email, senha) {
           const conexao = await fetch(rootUrl + "user-insert.php", {
                method: "POST",
                headers: {
-                    "Content-Type": "application/json" // Especificando o tipo de dados a ser enviado
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
                },
-               body: JSON.stringify({
+               body: new URLSearchParams({
                     nomeUsuario: name,
                     emailUsuario: email,
                     senhaUsuario: senha,
@@ -62,7 +64,6 @@ async function cadastroDeUsuario(name, email, senha) {
 // Para editar um usuário
 async function editarUsuario(usuarioId, name, email) {
      try {
-          // const conexao = await fetch(`http://localhost/modelos-prog/modelo-zero/api/editarUsuario.php`, {
           const conexao = await fetch(rootUrl + "user-update.php", {
                method: "PUT",
                headers: {
@@ -86,18 +87,22 @@ async function editarUsuario(usuarioId, name, email) {
           throw error;
      }
 }
+
 // export { editarUsuario };
 
 // Para deletar um usuario
-async function deleteUsuario(userId) {
+async function deleteUsuario(idUsuario) {
      try {
           // Faz uma requisição DELETE para excluir o usuário com o ID especificado
-          const conexao = await fetch(`${rootUrl}user-delete.php?idUsuario=${userId}`, {
+          const conexao = await fetch(rootUrl + "user-delete.php", {
 
                method: "DELETE",
                headers: {
-                    "Content-Type": "application/json"
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
                },
+               body: new URLSearchParams({
+                    idUsuario: idUsuario,
+               })
           });
 
           if (!conexao.ok) {
@@ -119,9 +124,10 @@ async function verificarEmailExistente(email) {
           const resposta = await fetch(rootUrl + "user-validate.php", {
                method: 'POST',
                headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
                },
-               body: JSON.stringify({ email })
+               // body: JSON.stringify({ email });
+               body: new URLSearchParams({ emailUsuario: email })
           });
 
           // Verifica se a requisição foi bem-sucedida
@@ -142,12 +148,29 @@ async function verificarEmailExistente(email) {
 }
 
 
-// Para Busca de um novo usuario
+// Para Busca de um usuario
 async function buscaDeUsuario(termoDeBusca) {
-     const conexao = await fetch(`${rootUrl}user-search.php?q=${termoDeBusca}`)
-     const conexaoConvertida = await conexao.json();
-     return conexaoConvertida;
+     try {
+          const resposta = await fetch(`${rootUrl}user-search.php?q=${termoDeBusca}`, {
+               headers: {
+                    "Accept": "application/json"
+               }
+          });
+
+          if (!resposta.ok) {
+               throw new Error(`Erro na busca de usuários: ${resposta.status} - ${resposta.statusText}`);
+          }
+
+          const pesquisaResposta = await resposta.text(); // Obtenha o texto da resposta
+          // console.log(pesquisaResposta); // Exiba a resposta no console
+          const dados = JSON.parse(pesquisaResposta); // Tente analisar o JSON
+          return dados;
+     } catch (erro) {
+          console.error("Erro na busca de usuários:", erro);
+          throw erro;
+     }
 }
+
 
 
 

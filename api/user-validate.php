@@ -1,18 +1,25 @@
 <?php
-// Inclua a conexão com o banco de dados
-require_once __DIR__ . '/../includes/db_connection.php';
+header('Content-Type: application/json; charset=utf-8');
+require_once __DIR__ . '/../core/database/db_connection.php';
+
+// Verifica se a conexão foi bem-sucedida
+if ($conn->connect_error) {
+     http_response_code(500);
+     echo json_encode(['status' => 'error', 'message' => 'Erro ao conectar ao banco de dados']);
+     exit();
+}
 
 // Obtém os dados enviados via POST
-$dadosRecebidos = json_decode(file_get_contents("php://input"), true);
+// $_POST = json_decode(file_get_contents("php://input"), true);
 
 // Verifica se o e-mail foi enviado
-if (isset($dadosRecebidos['email'])) {
+if (isset($_POST['emailUsuario'])) {
      // Escapa o e-mail para evitar SQL injection
-     $email = $mysqli->real_escape_string($dadosRecebidos['email']);
+     $email = $conn->real_escape_string($_POST['emailUsuario']);
 
      // Consulta se o e-mail já existe no banco de dados
      $consulta = "SELECT COUNT(*) AS total FROM usuarios WHERE emailUsuario = '$email'";
-     $resultado = $mysqli->query($consulta);
+     $resultado = $conn->query($consulta);
 
      // Verifica se a consulta foi bem-sucedida
      if ($resultado) {

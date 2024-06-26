@@ -53,25 +53,30 @@
 <!-- Jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- AOS -->
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
 <!-- FontAwesome -->
-<script src="https://kit.fontawesome.com/1395a6f245.js"></script>
+<!-- <script src="https://kit.fontawesome.com/1395a6f245.js"></script> -->
 <!-- Bootstrap JavaScript Bundle with Popper -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script> -->
-<script src="assets/js/bootstrap.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="assets/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <?php
 // Sweet Alert
 ?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://www.google.com/recaptcha/api.js" defer></script>
 <?php
 // API
 ?>
-<script type="module" src="./assets/js/api/conectaApi.js"></script>
-<script type="module" src="./assets/js/user/user-delete.js"></script>
-<script type="module" src="./assets/js/user/user-insert.js"></script>
-<script type="module" src="./assets/js/user/user-search.js"></script>
-<script type="module" src="./assets/js/user/user-select.js"></script>
-<script type="module" src="./assets/js/user/user-update.js"></script>
+<script type="module" src="../../assets/js/api/conectaApi.js"></script>
+<script type="module" src="../../assets/js/user/user-delete.js"></script>
+<script type="module" src="../../assets/js/user/user-insert.js"></script>
+<script type="module" src="../../assets/js/user/user-search.js"></script>
+<script type="module" src="../../assets/js/user/user-select.js"></script>
+<script type="module" src="../../assets/js/user/user-update.js"></script>
+<!-- Jquery MASK  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<!-- cookie-banner.js -->
+<script src="assets/js/cookie-banner.min.js"></script>
 <!-- main.js -->
 <script src="assets/js/main-min.js"></script>
 <script src="assets/js/custom-main-min.js"></script>
