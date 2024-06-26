@@ -3,7 +3,7 @@
 
 <head>
      <title>
-          <?= $title?>
+          home html
      </title>
      <meta name="description" content="DESCRIÇÃO DA PAGINA/SITE">
      <meta name="author" content="NOME DO AUTOR - EMPRESA">
@@ -29,9 +29,23 @@
 
      <!-- Bootstrap CSS v5.2.1 -->
      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> -->
-     <link rel="stylesheet" href="assets/css/bootstrap.min.css"crossorigin="anonymous">
+     <link rel="stylesheet" href="assets/css/bootstrap.min.css" crossorigin="anonymous">
      <!-- AOS css -->
      <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+     <!-- cookie banner -->
+     <!-- Para adicionar no head o estilo cookie banner -->
+     <!-- Para adicionar no head o estilo cookie banner -->
+     <link rel="stylesheet" href="https://hbach.com.br/api-hbach/cookie-banner/assets/css/cookie-banner.min.css"
+          as="style" onload="this.onload=null;this.rel='stylesheet'">
+     <noscript>
+          <link rel="preconnect" href="https://hbach.com.br/api-hbach/cookie-banner/assets/css/cookie-banner.min.css"
+               media="screen">
+     </noscript>
+     <link rel="stylesheet" href="/assets/css/cookie-banner-custom.min.css" as="style"
+          onload="this.onload=null;this.rel='stylesheet'">
+     <noscript>
+          <link rel="preconnect" href="/assets/css/cookie-banner-custom.min.css" media="screen">
+     </noscript>
      <!-- CSS only -->
      <link rel="stylesheet" type="text/css" href="assets/css/custom-main.css">
 </head>
@@ -100,147 +114,157 @@
      </div>
      <div id="indicator"></div>
 
-<main>
-     <section class="welcome-section d-none">
+     <main>
+          <section class="welcome-section d-none">
+               <div class="container">
+                    <div class="row">
+                         <div class="col-md-12">
+                              <h2>Boas-vindas</h2>
+                              <p>Ao modelo zero</p>
+                              <p>Texto de apoio</p>
+                         </div>
+                    </div>
+               </div>
+          </section>
+
+          <section class="user-section py-4">
+               <div class="container">
+                    <h2 class="mb-4">Usuáriossss</h2>
+                    <p>Cadastre novos usuários para sua aplicação!</p>
+                    <div class="row">
+                         <div class="col-md-12 my-4">
+                              <div id="busca-caixa">
+                                   <form role="search" method="get" id="search-form" class="form-inline" action="">
+                                        <input type="search" placeholder="Pesquisar" id="pesquisar"
+                                             class="pesquisar__input" data-pesquisa>
+                                        <button id="search-submit" class="pesquisar__botao" data-botao-pesquisa>
+                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                  <path
+                                                       d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                                             </svg>
+                                             <!-- <img src="assets/svg/search.svg" alt="Buscar"> -->
+                                             Buscar
+                                        </button>
+                                   </form>
+                              </div>
+                         </div>
+                    </div>
+                    <!-- Formulário para inserir usuário -->
+                    <form data-formulario-usuario>
+                         <div class="row mb-3">
+                              <div class="col-md-4">
+                                   <input type="text" class="form-control" name="nomeUsuario"
+                                        placeholder="Nome do usuário" required>
+                              </div>
+                              <div class="col-md-4">
+                                   <input type="email" class="form-control" name="emailUsuario"
+                                        placeholder="E-mail do usuário" required>
+                              </div>
+                              <div class="col-md-4">
+                                   <input type="password" class="form-control" name="senhaUsuario"
+                                        placeholder="Senha do usuário" required>
+                              </div>
+                         </div>
+                         <div class="text-end">
+                              <button type="submit" class="btn btn-primary">Cadastrar</button>
+                         </div>
+                    </form>
+
+                    <!-- Lista de usuários -->
+                    <div class="row user-list mt-4" data-user-list>
+                         <!-- Os usuários serão inseridos dinamicamente aqui -->
+                    </div>
+               </div>
+          </section>
+
+     </main>
+
+     <footer id="footer" class="">
           <div class="container">
                <div class="row">
+                    <div class="col-md-6 col-lg-3 logo-footer">
+                         <!-- img logo -->
+                         <p>Frase footer</p> <!-- Exibe a Frase Footer -->
+                         <div class="social">
+                              <!-- Icones redes sociais -->
+                         </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6 menu-footer">
+                         <!-- Menu do footer -->
+                    </div>
+
+                    <div class="col-md-12 col-lg-3 suporte-online">
+                         <h4>Suporte Online</h4>
+                         <div class="social-2">
+
+                              <div class="item">
+                                   <i class=""></i>
+                                   Texto
+                              </div>
+                         </div>
+                    </div>
+
                     <div class="col-md-12">
-                         <h2>Boas-vindas</h2>
-                         <p>Ao modelo zero</p>
-                         <p>Texto de apoio</p>
+                         <hr>
                     </div>
-               </div>
-          </div>
-     </section>
-
-     <section class="user-section py-4">
-          <div class="container">
-               <h2 class="mb-4">Usuáriossss</h2>
-               <p>Cadastre novos usuários para sua aplicação!</p>
-               <div class="row">
-                    <div class="col-md-12 my-4">
-                         <div id="busca-caixa">
-                              <form role="search" method="get" id="search-form" class="form-inline" action="">
-                                   <input type="search" placeholder="Pesquisar" id="pesquisar" class="pesquisar__input" data-pesquisa>
-                                   <button id="search-submit" class="pesquisar__botao" data-botao-pesquisa>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                             <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
-                                        </svg>
-                                        <!-- <img src="assets/svg/search.svg" alt="Buscar"> -->
-                                   Buscar     
-                                   </button>
-                              </form>
-                         </div>
-                    </div>
-               </div>
-               <!-- Formulário para inserir usuário -->
-               <form data-formulario-usuario>
-                    <div class="row mb-3">
-                         <div class="col-md-4">
-                              <input type="text" class="form-control" name="nomeUsuario" placeholder="Nome do usuário" required>
-                         </div>
-                         <div class="col-md-4">
-                              <input type="email" class="form-control" name="emailUsuario" placeholder="E-mail do usuário" required>
-                         </div>
-                         <div class="col-md-4">
-                              <input type="password" class="form-control" name="senhaUsuario" placeholder="Senha do usuário" required>
-                         </div>
-                    </div>
-                    <div class="text-end">
-                         <button type="submit" class="btn btn-primary">Cadastrar</button>
-                    </div>
-               </form>
-
-               <!-- Lista de usuários -->
-               <div class="row user-list mt-4" data-user-list>
-                    <!-- Os usuários serão inseridos dinamicamente aqui -->
-               </div>
-          </div>
-     </section>
-
-</main>
-
-<footer id="footer" class="">
-     <div class="container">
-          <div class="row">
-               <div class="col-md-6 col-lg-3 logo-footer">
-                    <!-- img logo -->
-                    <p>Frase footer</p> <!-- Exibe a Frase Footer -->
-                    <div class="social">
-                         <!-- Icones redes sociais -->
-                    </div>
-               </div>
-
-               <div class="col-md-6 col-lg-6 menu-footer">
-                    <!-- Menu do footer -->
-               </div>
-
-               <div class="col-md-12 col-lg-3 suporte-online">
-                    <h4>Suporte Online</h4>
-                    <div class="social-2">
-
-                         <div class="item">
-                              <i class=""></i>
-                              Texto
-                         </div>
-                    </div>
-               </div>
-
-               <div class="col-md-12">
-                    <hr>
-               </div>
-               <div class="col-md-12 copyright d-flex align-items-center">
-                    <div class="copy">
-                         <div class="row-flex">
-                              <?php
+                    <div class="col-md-12 copyright d-flex align-items-center">
+                         <div class="copy">
+                              <div class="row-flex">
+                                   <?php
                               $data = date('Y');
                               ?>
-                              <p><span>Nome do site <time>
-                                             <? echo $data; ?>
-                                        </time> © Todos os direitos reservados</span></p>
+                                   <p><span>Nome do site <time>
+                                                  <? echo $data; ?>
+                                             </time> © Todos os direitos reservados</span></p>
+                              </div>
                          </div>
-                    </div>
 
-                    <div class="assinatura-hb d-none">
+                         <div class="assinatura-hb d-none">
 
-                         <a href="https://hbach.com.br" target="_Blank" title="Hbach design"
-                              alt="Site desenvolvido por Hbach design">
-                         </a>
+                              <a href="https://hbach.com.br" target="_Blank" title="Hbach design"
+                                   alt="Site desenvolvido por Hbach design">
+                              </a>
 
+                         </div>
                     </div>
                </div>
           </div>
-     </div>
 
-     <!-- <div class="back-to-top nav-link"><a href="#top" alt="Voltar ao topo"><i class="fa fa-chevron-up"></i></a></div> -->
-     <div class="back-to-top nav-link"><a href="#top" alt="Voltar ao topo"><img src="assets/svg/chevron-up.svg"
-                    alt="Voltar ao topo" loading="lazy"></a></div>
-</footer>
-<!-- Jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- AOS -->
-<!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
-<!-- FontAwesome -->
-<script src="https://kit.fontawesome.com/1395a6f245.js"></script>
-<!-- Bootstrap JavaScript Bundle with Popper -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script> -->
-<script src="assets/js/bootstrap.min.js"integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<?php
+          <!-- <div class="back-to-top nav-link"><a href="#top" alt="Voltar ao topo"><i class="fa fa-chevron-up"></i></a></div> -->
+          <div class="back-to-top nav-link"><a href="#top" alt="Voltar ao topo"><img src="assets/svg/chevron-up.svg"
+                         alt="Voltar ao topo" loading="lazy"></a></div>
+     </footer>
+     <!-- Jquery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <!-- AOS -->
+     <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+     <!-- FontAwesome -->
+     <script src="https://kit.fontawesome.com/1395a6f245.js"></script>
+     <!-- Bootstrap JavaScript Bundle with Popper -->
+     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script> -->
+     <script src="assets/js/bootstrap.min.js"
+          integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+          crossorigin="anonymous"></script>
+     <?php
 // Sweet Alert
 ?>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<?php
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <?php
 // API
 ?>
-<script type="module" src="./assets/js/api/conectaApi.js"></script>
-<script type="module" src="./assets/js/user/user-delete.js"></script>
-<script type="module" src="./assets/js/user/user-insert.js"></script>
-<script type="module" src="./assets/js/user/user-search.js"></script>
-<script type="module" src="./assets/js/user/user-select.js"></script>
-<script type="module" src="./assets/js/user/user-update.js"></script>
-<!-- main.js -->
-<script src="assets/js/main-min.js"></script>
-<script src="assets/js/custom-main-min.js"></script>
+     <script type="module" src="./assets/js/api/conectaApi.js"></script>
+     <script type="module" src="./assets/js/user/user-delete.js"></script>
+     <script type="module" src="./assets/js/user/user-insert.js"></script>
+     <script type="module" src="./assets/js/user/user-search.js"></script>
+     <script type="module" src="./assets/js/user/user-select.js"></script>
+     <script type="module" src="./assets/js/user/user-update.js"></script>
+     <!-- cookie banner -->
+     <script type="text/javascript" src="https://hbach.com.br/api-hbach/cookie-banner/assets/js/cookie-banner.min.js"
+          defer></script>
+     <!-- main.js -->
+     <script src="assets/js/main-min.js"></script>
+     <script src="assets/js/custom-main-min.js"></script>
 </body>
 
 </html>

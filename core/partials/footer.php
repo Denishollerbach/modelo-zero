@@ -51,7 +51,7 @@
      <div class="back-to-top nav-link"><a href="#top" alt="Voltar ao topo"><img src="assets/svg/chevron-up.svg" alt="Voltar ao topo" loading="lazy"></a></div>
 </footer>
 <!-- Jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <!-- AOS -->
 <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
 <!-- FontAwesome -->
@@ -76,7 +76,9 @@
 <!-- Jquery MASK  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <!-- cookie-banner.js -->
-<script src="assets/js/cookie-banner.min.js"></script>
+<!-- <script src="assets/js/cookie-banner.min.js"></script> -->
+<!-- Para adicionar no footer o script cookie-banner -->
+<script type="text/javascript" src="https://hbach.com.br/api-hbach/cookie-banner/assets/js/cookie-banner.min.js" defer></script>
 <!-- main.js -->
 <script src="assets/js/main-min.js"></script>
 <script src="assets/js/custom-main-min.js"></script>

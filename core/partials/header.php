@@ -54,6 +54,17 @@
      <!-- AOS css -->
      <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
 
+     <!-- Cookie banner -->
+     <!-- Para adicionar no head o estilo cookie banner -->
+     <link rel="stylesheet" href="https://hbach.com.br/api-hbach/cookie-banner/assets/css/cookie-banner.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+     <noscript>
+          <link rel="preconnect" href="https://hbach.com.br/api-hbach/cookie-banner/assets/css/cookie-banner.min.css" media="screen">
+     </noscript>
+     <link rel="stylesheet" href="/assets/css/cookie-banner-custom.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+     <noscript>
+          <link rel="preconnect" href="/assets/css/cookie-banner-custom.min.css" media="screen">
+     </noscript>
+
      <!-- CSS only -->
      <link rel="stylesheet" type="text/css" href="../../assets/css/cookie-banner.min.css">
      <link rel="stylesheet" type="text/css" href="../../assets/css/main.min.css">
