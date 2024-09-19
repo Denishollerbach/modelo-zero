@@ -11,6 +11,45 @@
 
                <div class="col-md-6 col-lg-6 menu-footer">
                     <!-- Menu do footer -->
+                    <div id="footer-submenu" class="grid-column footer-submenu">
+                         <ul class="navbar-nav">
+                              <li class="menu-item nav-item">
+                                   <a class="nav-link" title="Assessoria de Imprensa" href="/assessoria-de-imprensa">Assessoria de Imprensa</a>
+                              </li>
+                              <li class="menu-item nav-item">
+                                   <a class="nav-link" title="Contato" href="/contato">Contato</a>
+                              </li>
+                              <li class="menu-item nav-item">
+                                   <a class="nav-link" title="Política de Cookies" href="/politica-de-cookies">Política de Cookies</a>
+                              </li>
+                              <li class="menu-item nav-item">
+                                   <a class="nav-link" title="Política de Privacidade" href="/politica-de-privacidade">Política de Privacidade</a>
+                              </li>
+
+                              <li class="menu-item nav-item">
+                                   <a class="nav-link" title="Termos de Uso" href="/termos-de-uso">Termos de Uso</a>
+                              </li>
+
+
+                              <li class="menu-item nav-item nav-item-social">
+                                   <ul class="social-menu navbar-nav">
+                                        <li class="menu-item nav-item">
+                                             <a class="nav-link" title="Instagram de" href="https://www.instagram.comoficial/?fref=ts" target="_blank">
+                                                  <picture class="image-picture image-icone-instagram ">
+                                                       <source srcset="/assets/images/icones/icone-instagram.svg" media="(max-width: 720px)">
+                                                       <source srcset="/assets/images/icones/icone-instagram.svg" media="(max-width: 1280px)">
+                                                       <source srcset="/assets/images/icones/icone-instagram.svg">
+                                                       <img loading="lazy" src="/assets/images/icones/icone-instagram.svg" class="image image-icone-instagram icone-invertido" alt="Logo do Instagram.">
+                                                  </picture>
+                                             </a>
+                                        </li>
+
+                    
+                                   </ul>
+                              </li>
+                         </ul>
+                    </div>
+
                </div>
 
                <div class="col-md-12 col-lg-3 suporte-online">
@@ -78,7 +117,7 @@
 <!-- cookie-banner.js -->
 <!-- <script src="assets/js/cookie-banner.min.js"></script> -->
 <!-- Para adicionar no footer o script cookie-banner -->
-<script type="text/javascript" src="https://hbach.com.br/api-hbach/cookie-banner/assets/js/cookie-banner.min.js" defer></script>
+<script type="text/javascript" src="/assets/js/components/cookie-banner.min.js" defer></script>
 <!-- main.js -->
 <script src="assets/js/main-min.js"></script>
 <script src="assets/js/custom-main-min.js"></script>

@@ -1,33 +1,20 @@
-version: '3'
-
+version: '3.9'
 services:
-
-  # MySQL
   db:
     container_name: db
     hostname: db
     image: mysql:8.0
     user: "74:74"
-    # Command usado para iniciar o servidor MySQL com opções específicas:
-    #   - --default-authentication-plugin=mysql_native_password: Define o plugin de autenticação padrão como mysql_native_password,
-    #     que é comumente usado para compatibilidade com versões anteriores do MySQL.
-    #   - --character-set-server=utf8mb4: Define o conjunto de caracteres padrão para o servidor MySQL como utf8mb4,
-    #     permitindo o suporte total a Unicode para armazenar uma ampla gama de caracteres.
-    #   - --collation-server=utf8mb4_general_ci: Define a ordem de classificação padrão como utf8mb4_general_ci,
-    #     que é uma ordem de classificação sensível a maiúsculas e minúsculas para utf8mb4.
-    #   - --sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION:
-    #     Configura o modo SQL para garantir transações estritas e evitar ambiguidades nos dados.
-    command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci --sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+    command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: db_hbach_template
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     ports:
-      - '3306:3306' # Mapeia a porta 3306 do host para a porta 3306 do contêiner MySQL
+      - '3306:3306'
     volumes:
-      - '../database/docker/db/data:/var/lib/mysql' # Mapeia o diretório de dados do MySQL do host para o contêiner
-      - '../database/docker/db/sql:/opt/db/sql' # Mapeia o diretório SQL do host para o contêiner
-  # Apache (site)
+      - '../database/docker/db/data:/var/lib/mysql'
+      - '../database/docker/db/sql:/opt/db/sql'
   site:
     build: .
     container_name: site
@@ -44,21 +31,19 @@ services:
     volumes:
       - .:/var/www/html
     depends_on:
-      - db # Garante que o contêiner MySQL esteja pronto antes de iniciar este contêiner
-  # PHPMyAdmin
+      - db
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin # Usa a imagem oficial do PHPMyAdmin
-    container_name: pma # Define o nome do contêiner como 'pma'
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
     links:
-      - db # Estabelece uma conexão com o contêiner MySQL
+      - db
     environment:
-      PMA_HOST: db # Define o host do MySQL para PHPMyAdmin
-      PMA_PORT: 3306 # Define a porta do MySQL para PHPMyAdmin
+      PMA_HOST: db
+      PMA_PORT: 3306
       PMA_ARBITRARY: 1
     restart: always
     ports:
-      - 5555:80 # Mapeia a porta 5555 do host para a porta 80 do contêiner PHPMyAdmin
-  # Novo serviço PHP-consumindo-api
+      - 5555:80
   site_dash:
     build: .
     container_name: site_dash
@@ -71,6 +56,6 @@ services:
     depends_on:
       - db
     ports:
-      - '7777:80' # Porta 7777 no host, porta 77 no contêiner
+      - '7777:80'
     volumes:
       - ../modelo-zero-admin:/var/www/html
