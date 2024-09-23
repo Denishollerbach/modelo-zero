@@ -1,0 +1,98 @@
+// @import "../../settings/variables";
+
+// Buttons
+.btn {
+    display: flex;
+    height: var(--btn-height);
+    border-radius: var(--btn-border-radius);
+    transition: var(--transition-base);
+    font-weight: var(--font-weight-normal);
+    max-width: fit-content;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    
+    &:not([class*="btn-outline-"] ) {
+        border-color: transparent;
+    }
+    
+    &.btn-outline-secondary:hover {
+        color: var(--color-primary-500);   
+        border-color: var(--color-primary-500);   
+    }
+    
+    @include media-breakpoint-down(md) {
+        width: max-content;
+    }
+
+    // &-loja-hypera {
+    //     height: 36px;
+    // }
+    
+    // &-white {
+    //     &:hover {
+    //         opacity: 1;
+    //         background-color: transparent;
+    //         border: 1px solid $white;
+    //         color: $white!important;
+    //     }
+    // }
+
+    // &-produto {
+    //     max-width: 100%;
+    //     width: 160px;
+    //     text-align: center;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    // }
+}
+
+#btn-accept-cookies {
+    color: var(--white);
+}
+
+// Links and buttons
+a {
+    transition: $transition-base;
+    
+    &.card {
+        @include hover-et-all {
+            cursor: pointer;
+        }
+    }
+    
+    &:not(.btn) {
+        text-decoration: none;
+        color: var(--link-color);
+        
+        @include hover-et-all {
+            text-decoration: underline;
+            color: $link-hover-color;
+        }
+    }       
+}
+
+.link {
+    color: var(--link-color);
+    
+    @include hover-et-all {
+        color: $link-hover-color;
+        text-decoration: underline;
+    }
+}
+
+span {
+    &.link {
+        transition: $transition-base;
+        
+        @include hover-et-all {
+            
+        }
+    }
+}
+
+button {
+    img {
+        @include image-hover;
+    }
+}

@@ -1,0 +1,40 @@
+// @import "../variables";
+//
+// Hover mixins
+//
+
+// Styles on hover, active and focus element states
+@mixin hover-et-all {
+    &:hover,
+    &:active,
+    &:focus {
+        @content;
+    }
+}
+
+// Opacity Smooth animation for images inside links on hover state
+@mixin image-hover {
+    transition: $transition-fade;
+    
+    @include hover-et-all {
+        opacity: .7;
+    }
+}
+
+// Size Smooth animation for images inside links on hover state
+@mixin zoom-out-hover {
+    transition: $transition-transform;
+    
+    @include hover-et-all {
+        transform: scale( .9 );
+    }
+}
+
+// Resize Smooth animation for images inside links on hover state
+@mixin zoom-in-hover {
+    transition: $transition-transform;
+    
+    @include hover-et-all {
+        transform: scale( 1.1 );
+    }
+}

@@ -1,0 +1,184 @@
+// Brand colors
+$color-brand-primary: #0c2b64 
+$color-brand-secondary: #ffff00 
+// Primary colors
+// Primary
+$color-primary-100: #D7E5FF
+$color-primary-200: #A1C2FF
+$color-primary-300: #5E8BDE
+$color-primary-400: #1F468D
+$color-primary-500: #0C2B64
+$color-primary-600: #091F49
+$color-primary-700: #041638
+$color-primary-800: #010D25
+$color-primary-900: #00050E
+// Secondary
+$color-secondary-100: #FFFFE5
+$color-secondary-200: #FFFFAC
+$color-secondary-300: #FFFF73
+$color-secondary-400: #FFFF39
+$color-secondary-500: #FFFF00
+$color-secondary-600: #D6D600
+$color-secondary-700: #ADAD00
+$color-secondary-800: #848400
+$color-secondary-900: #5C5C00
+// Accents colors
+// Accent blue
+$color-accent-blue-100: #E5F7FF
+$color-accent-blue-200: #ACE6FF
+$color-accent-blue-300: #73D5FF
+$color-accent-blue-400: #39C4FF
+$color-accent-blue-500: #00A7EE
+$color-accent-blue-600: #008AC5
+$color-accent-blue-700: #006E9C
+$color-accent-blue-800: #005174
+$color-accent-blue-900: #00344B
+// Accent orange
+$color-accent-orange-100: #FFF3E6
+$color-accent-orange-200: #FFD8AE
+$color-accent-orange-300: #FFBE76
+$color-accent-orange-400: #FFA33E
+$color-accent-orange-500: #EE8006
+$color-accent-orange-600: #C56800
+$color-accent-orange-700: #9C5200
+$color-accent-orange-800: #743D00
+$color-accent-orange-900: #4B2700
+
+// Grays Colors     
+$white: #ffffff
+$color-neutral-100: #F2F2F2
+$color-neutral-200: #DBDBDB
+$color-neutral-300: #C5C5C5
+$color-neutral-400: #AEAEAE
+$color-neutral-500: #959697
+$color-neutral-600: #7D7E81
+$color-neutral-700: #65676A
+$color-neutral-800: #4E5053
+$color-neutral-900: #38393D
+$black: #000000
+
+$colors-neutrals: ("color-neutral-100": $color-neutral-100,"color-neutral-400": $color-neutral-400,"color-neutral-500": $color-neutral-500,"color-neutral-600": $color-neutral-600)
+
+// Loop para criar as classes de background dinamicamente
+@each $name, $color in $colors-neutrals
+     .bg-#{$name}
+          background-color: $color
+
+
+
+// SUCESS COLOR
+$color-success-100: #D2FDC7
+$color-success-500: #4DAC36
+$color-success-900: #2D681F
+// WARNING COLOR
+$color-warning-100: #FFF3B5
+$color-warning-500: #FFD500
+$color-warning-900: #B89A00
+// DANGER COLOR
+$color-danger-100: #FDC3B6
+$color-danger-500: #ED3107
+$color-danger-900: #BB2706
+     
+// Texto
+$text-color: #333
+
+// Link
+$link-color: $color-primary-500
+$link-decoration: underline
+$link-shade-percentage: 20%
+$link-hover-color: shift-color($link-color, $link-shade-percentage)
+$link-hover-decoration: null
+
+
+$gradient-primary-a: linear-gradient(265.73deg, rgba(255, 255, 255, 0) 3.48%, $color-primary-500 100%)
+$gradient-primary-b: linear-gradient(265.73deg, $color-secondary-500 0%, $color-primary-500 100%)
+
+$gradient-primary-a-dark: linear-gradient(265.73deg, rgba(0, 0, 0, 0.5) 3.48%, darken($color-primary-500, 10%) 100%)
+$gradient-primary-b-dark: linear-gradient(265.73deg, darken($color-secondary-500, 10%) 0%, darken($color-primary-500, 10%) 100%)
+
+     
+// Defina as variáveis no :root
+:root
+     // Brand colors
+     --color-brand-primary: #{$color-brand-primary}
+     --color-brand-secondary: #{$color-brand-secondary}
+     // Primary colors
+          // Primary
+     --color-primary-100: #{$color-primary-100}
+     --color-primary-200: #{$color-primary-200}
+     --color-primary-300: #{$color-primary-300}
+     --color-primary-400: #{$color-primary-400}
+     --color-primary-500: #{$color-primary-500}
+     --color-primary-600: #{$color-primary-600}
+     --color-primary-700: #{$color-primary-700}
+     --color-primary-800: #{$color-primary-800}
+// Secondary
+     --color-secondary-100: #{$color-secondary-100}
+     --color-secondary-200: #{$color-secondary-200}
+     --color-secondary-300: #{$color-secondary-300}
+     --color-secondary-400: #{$color-secondary-400}
+     --color-secondary-500: #{$color-secondary-500}
+     --color-secondary-600: #{$color-secondary-600}
+     --color-secondary-700: #{$color-secondary-700}
+     --color-secondary-800: #{$color-secondary-800}
+     // Accents colors
+
+     // Grays Colors      
+     --white: #{$white}
+     --color-neutral-50: #{$color-neutral-50}
+     --color-neutral-100: #{$color-neutral-100}
+     --color-neutral-200: #{$color-neutral-200}
+     --color-neutral-300: #{$color-neutral-300}
+     --color-neutral-400: #{$color-neutral-400}
+     --color-neutral-500: #{$color-neutral-500}
+     --color-neutral-600: #{$color-neutral-600}
+     --color-neutral-700: #{$color-neutral-700}
+     --color-neutral-800: #{$color-neutral-800}
+     --color-neutral-900: #{$color-neutral-900} 
+     --white: #{$white}
+
+     // SUCESS COLOR
+     --color-success-100: #{$color-success-100}
+     --color-success-500: #{$color-success-500}
+     --color-success-900: #{$color-success-900}
+     // WARNING COLOR
+     --color-warning-100: #FFF3B5
+     --color-warning-500: #FFD500
+     --color-warning-900: #B89A00
+     // DANGER COLOR
+     --color-danger-100: #FDC3B6
+     --color-danger-500: #ED3107
+     --color-danger-900: #BB2706
+
+     // Texto
+     --text-color: #{$text-color}
+
+     // Link
+     --link-color: #{$link-color}
+     --link-decoration: #{$link-decoration}
+     --link-shade-percentage: #{$link-shade-percentage}
+     --link-hover-color: #{$link-hover-color}
+     --link-hover-decoration: #{$link-hover-decoration}
+     
+     // Gradients
+     --gradient-primary-a: #{$gradient-primary-a}
+     --gradient-primary-b: #{$gradient-primary-b}
+
+     --gradient-primary-a-dark: #{$gradient-primary-a-dark}
+     --gradient-primary-b-dark: #{$gradient-primary-b-dark}
+
+     // --variable: #{$variable}
+
+
+     // Barra de rolagem
+     --bg-barra-de-rolagem: #{$bg-barra-de-rolagem}
+     --color-barra-de-rolagem: #{$color-barra-de-rolagem}
+
+
+     
+
+   
+
+// Darkmode
+body.dark
+     --text-color: #fff

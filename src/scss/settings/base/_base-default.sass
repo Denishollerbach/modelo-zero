@@ -1,0 +1,81 @@
+/* width of the entire scrollbar */
+body::-webkit-scrollbar,
+.modal::-webkit-scrollbar
+	// width: 7px
+
+/* color of the tracking area */
+body::-webkit-scrollbar-track,
+.modal::-webkit-scrollbar-track
+	// background: var(--bg-barra-de-rolagem)
+
+/* color of the scroll thumb */
+body::-webkit-scrollbar-thumb,
+.modal::-webkit-scrollbar-thumb
+	/* color of the scroll thumb */
+	// background-color: var(--color-barra-de-rolagem)
+	// height: 33px
+	// border-radius: 0px
+
+:target
+	scroll-margin-top: 4.5em
+
+
+body
+	scroll-behavior: smooth
+	margin-top: 0!important
+	font-family: var(--text-font-family)
+	color: var(--text-color)
+	position: relative
+	font-size: 16px
+	text-rendering: optimizeLegibility
+	-webkit-font-smoothing: antialiased
+	&.overflow
+		overflow: hidden
+	&:not(.modal-open)
+		overflow: scroll !important
+	a
+		color: var(--link-color)
+		word-break: break-word
+		text-decoration: none
+		&:hover
+			color: var(--link-color-hover)
+			text-decoration: none
+			cursor: pointer
+			transition: all 330ms linear
+			> span
+				transition: var(--transition-base)
+
+
+
+
+// Cards
+.card
+	// transition: var(--transition-base)
+ul,
+ol
+	list-style-type: none
+	padding-left: 0
+	margin-bottom: 0
+
+.lista-com-marcadores
+	list-style-type: disc
+
+// Breadcrumbs
+.breadcrumbs
+	display: inline-flex
+	grid-gap: .55rem
+	color: var(--gray-400)
+	font-size: var(--font-size-sm)
+	@media (max-width: 1366px)
+		grid-gap: .4rem
+	.texto
+		color: var(--gray-400)
+		font-weight: var(--font-weight-base)
+	.link
+		font-weight: var(--font-weight-base)
+		transition: var(--transition-base)
+		color: var(--gray-400)
+		@include hover-et-all
+			color: var(--gray-100)
+	span
+		font-size: var(--font-size-xs)

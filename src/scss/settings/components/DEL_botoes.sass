@@ -1,0 +1,75 @@
+// .entry-content a:not(.woocommerce a:not(.button)):not(.wc-block-grid__product-link),
+.woocommerce a.button,
+// .wp-element-button,
+.entry-content .faux-button,
+.entry-content .wp-block-button__link,
+// .entry-content .wp-block-file__button,
+.entry-content input[type="button"],
+.entry-content input[type="reset"],
+.entry-content input[type="submit"],
+// .entry-content button:not(.accordion-button):not(.btn-close),
+.entry-content button[type="submit"],
+.banner-box .banner-text a,
+.btn:not([class*="btn-"]):not([class^="btn-"])
+	padding: 1em 2em
+	font-size: 14px
+	background: transparent
+	border: none
+	position: relative
+	color: #fff!important
+	z-index: 1
+	text-transform: upperase
+	display: inline-block
+	border-radius: 10px
+	transition: 639ms
+	background-color: transparent !important
+	min-width: 85px
+	text-align: center
+	&:focus
+		box-shadow: none
+		&::before
+			transform: translate(5%, 20%)
+			width: 10px
+			height: 10px
+		&::after
+			border-radius: 50px
+			transform: translate(0, 0)
+			width: 100%
+			height: 100%
+	&::before,
+	&::after
+		content: ''
+		position: absolute
+		bottom: 0
+		right: 0
+		z-index: -99999
+		transition: all .4s
+	&::before
+		transform: translate(0%, 0%)
+		width: 100%
+		height: 100%
+		background: var(--color-secondary-500)
+		border-radius: 10px
+	&::after
+		transform: translate(0px, 0px)
+		width: 10px
+		height: 10px
+		background: var(--color-primary-500)
+		backdrop-filter: blur(5px)
+		border-radius: 8px 0 10px 0px
+	&:hover
+		background: transparent
+		color: #fff!important
+		&::before
+			transform: translate(5%, 20%)
+			width: 10px
+			height: 10px
+		&::after
+			border-radius: 10px
+			transform: translate(0, 0)
+			width: 100%
+			height: 100%
+	&:active
+		&::after
+			transition: 0s
+			transform: translate(0, 5%)

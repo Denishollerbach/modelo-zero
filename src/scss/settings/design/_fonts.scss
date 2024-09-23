@@ -1,0 +1,178 @@
+// FONT FAMILY
+$text-font-family: 'Inter', sans-serif;
+$text-font-family-alternative: 'Saira', sans-serif;
+
+
+// SIZE
+$font-size-root: null;
+$font-size-md: 1.5rem; //24px
+$font-size-base: 1.062rem; // 17px
+$font-size-sm: 0.875rem; // 14px
+$font-size-xs: 0.813rem; // 13px
+
+$h1-font-size: 2.5rem; // 40px
+$h2-font-size: 2.25rem; // 36px
+$h3-font-size: 2rem; // 32px
+$h4-font-size: 1.75rem; // 28px
+$h5-font-size: 1.375rem; // 22px
+$h6-font-size: var(--font-size-base); // 17px
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+);
+
+// WEIGHT
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+$font-weight-base: $font-weight-normal;
+
+// LINE WEIGHT
+$line-height-lg: 1.5;
+$line-height-base: 1.4;
+$line-height-sm: 1.2;
+$line-height-xs: 1.1;
+
+
+$headings-margin-bottom: 0;
+$headings-font-family: null;
+$headings-font-style: null;
+$headings-font-weight: $font-weight-bold;
+$headings-line-height: 1.5;
+$headings-color: var(--color-neutral-600);
+
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem
+);
+
+$display-font-weight: 300;
+$display-line-height: $headings-line-height;
+
+
+
+
+
+
+$lead-font-size: $font-size-base * 1.25;
+$lead-font-weight: 300;
+
+$small-font-size: .875em;
+
+$sub-sup-font-size: .75em;
+
+$text-muted: var(--color-neutral-400);
+
+$initialism-font-size: $small-font-size;
+// Paragraphs
+//
+// Style p element.
+$paragraph-margin-bottom: 1rem;
+
+
+
+
+// Titles
+$titles: (
+  (1: $h1-font-size, 2: $h2-font-size, 3: $h3-font-size, 4: $h4-font-size, 5: $h5-font-size, 6: $h6-font-size)
+);
+
+@each $number, $value in $titles {
+
+  .h#{$number},
+  h#{$number} {
+    font-size: #{$value};
+  }
+}
+
+:is(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6) {
+  font-family: var(--text-font-family);
+  color: $headings-color;
+  margin-bottom: $headings-margin-bottom;
+  font-weight: $headings-font-weight;
+}
+
+h1,
+.h1 {
+  line-height: $line-height-sm;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2rem; //32px
+  }
+}
+
+h2,
+.h2 {
+  @include media-breakpoint-down(md) {
+    font-size: 1.75rem; //28px
+  }
+}
+
+h3,
+.h3 {
+  @include media-breakpoint-down(md) {
+    font-size: 1.5rem; //24px
+  }
+}
+
+:is(h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, small) {
+  line-height: $line-height-base;
+}
+
+a {
+  line-height: $line-height-lg;
+}
+
+p {
+  font-weight: $font-weight-normal;
+  font-size: var(--font-size-base);
+  color: var(--neutral-500);
+  line-height: $headings-line-height;
+}
+
+.fs-md {
+  font-size: $font-size-md; //24px
+}
+
+.fs-bs {
+  font-size: var(--font-size-base); // 17px
+}
+
+.fs-sm {
+  font-size: $font-size-sm; // 14px
+}
+
+.fs-xs {
+  font-size: $font-size-xs; // 13px
+}
+
+.lead {
+  font-size: var(--font-size-base);
+  font-weight: $font-weight-base;
+}
+
+
+
+
+
+
+
+:root {
+  --text-font-family: #{$text-font-family};
+  --text-font-family-alternative: #{$text-font-family-alternative};
+
+}

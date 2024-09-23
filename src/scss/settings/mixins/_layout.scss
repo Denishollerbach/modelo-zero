@@ -1,0 +1,66 @@
+// @import "../variables";
+//
+// Specific layout mixins
+//
+
+// Grids
+
+// Grid construct by one column with the width`s double of other, on desktop.
+// Layout displayed in column direction, on mobile.
+@mixin grid-2-1-default( $gap-desktop: 5rem, $gap-mobile: 2rem ) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: $gap-desktop;
+
+    @include media-breakpoint-down(md) {
+        display: flex;
+        flex-direction: column-reverse;
+        grid-gap: $gap-mobile;
+    }
+}
+
+// Grid construct by one column with the width`s half of other, on desktop.
+// Layout displayed in column direction, on mobile.
+@mixin grid-1-2-reverse( $gap-desktop: 5rem, $gap-mobile: 2rem ) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: $gap-desktop;
+
+    @include media-breakpoint-down(md) {
+        display: flex;
+        flex-direction: column;
+        grid-gap: $gap-mobile;
+    }
+}
+
+// Verify if a variable contains a string
+@function contains($list,$var) {
+    $_out: false;
+    @each $item in $list { @if $item == $var { $_out: true; } }
+    @return $_out;
+}
+
+// Grid construct by two column with the same width, on desktop.
+// Layout displayed in column direction, on mobile.
+@mixin grid-two-columns( $gap-desktop: 3rem, $gap-mobile: 1.5rem, $grid_intermediario: true ) {
+    display: grid;
+    grid-gap: $gap-desktop;
+
+    @if ( contains( $gap-desktop, 0 ) ) {
+        grid-template-columns: repeat(2, 50%);    
+    } @else {
+        grid-template-columns: repeat(2, calc(50% - calc( #{$gap-desktop} / 2 )));
+    }
+
+    @if ( $grid_intermediario: false ) {
+        @include media-breakpoint-between(lg, xl) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        display: flex;
+        flex-direction: column;
+        grid-gap: $gap-mobile;
+    }
+}
